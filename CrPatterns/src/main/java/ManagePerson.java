@@ -1,8 +1,8 @@
-import abstrFabr.builder.AmazingPersonBuilder;
-import abstrFabr.builder.PersonsBuildDirector;
-import abstrFabr.entity.Person;
-import abstrFabr.entity.Robot;
-import abstrFabr.manager.FactoryManager;
+import abstractfactory.builder.AmazingPersonBuilder;
+import abstractfactory.builder.PersonsBuildDirector;
+import abstractfactory.entity.Person;
+import abstractfactory.entity.Robot;
+import abstractfactory.manager.FactoryManager;
 
 /**
  * Created by Ihar_Rubanovich on 1/17/2017.
@@ -10,13 +10,13 @@ import abstrFabr.manager.FactoryManager;
 public class ManagePerson {
 
     public static void main(String[] args) {
-
-        /*abstract factory demo*/
-        showFabriquePattern();
-        /*builder demo*/
-        showBuildPattern();
-        /*prototipeDemo*/
+       /*prototypeDemo*/
         showPrototypePattern();
+        /*abstract factory demo*/
+      //  showFabriquePattern();
+        /*builder demo*/
+      //  showBuildPattern();
+
     }
 
     private static void showBuildPattern() {
@@ -37,7 +37,9 @@ public class ManagePerson {
         robot.setRoboHeight(11);
         Robot roboClone = robot.clone();
             roboClone.setRoboHeight(111);
-        System.out.println(" First robot " + robot.toString() + " cloned robot " + roboClone.toString());
+        roboClone.setRoboModel("terinator2");
+        robot.setRoboModel("terminator3");
+        System.out.println(" " + " cloned robot " + roboClone.toString() + "\n" + " First robot " + robot.toString());
 
     }
 
